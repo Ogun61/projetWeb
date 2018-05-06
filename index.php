@@ -28,7 +28,7 @@ and open the template in the editor.
     <body>
         <div class="container">
             <header>
-                <img src="admin/images/" alt=""/>
+                <h1>Auto Pièce Service LL</h1>
             </header>
             <nav>
                 <?php

@@ -1,15 +1,15 @@
 //pour attendre que tous les objets soient chargés
 $(document).ready(function(){
 
-     $(".navbar-toggler").collapse();
-     $(".dropdown-toggle").dropdown();
-      
-      
-      
+     //$(".navbar-toggler").collapse();
+     //$(".dropdown-toggle").dropdown();
+
+
+
           //pour pouvoir utiliser regex
-    $.validator.addMethod("regex", function (value, element, regexpr) {
-        return regexpr.test(value);
-    }, "Format non valide.");
+          $.validator.addMethod("regex", function (value, element, regexpr) {
+            return regexpr.test(value);
+        }, "Format non valide.");
 
 
     //champs -> identifiants
