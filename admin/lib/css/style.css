@@ -87,3 +87,21 @@ body{
     height: 400px;
     width: 700px;
 }
+
+#btcontact{
+	margin-right:400px;
+    
+}
+
+#titrec{
+	    border-bottom: solid 0.05em;
+    border-bottom-color: grey;
+}
+
+section#main {
+    margin-top: 100px;
+}
+
+div#maps {
+    margin-top: 250px;
+}

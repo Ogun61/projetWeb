@@ -27,9 +27,6 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-            <header>
-                <h1>Auto Pièce Service LL</h1>
-            </header>
             <nav>
                 <?php
                 if(file_exists('./lib/php/p_menu.php')){
@@ -37,6 +34,7 @@ and open the template in the editor.
                 }
                 ?>
             </nav>
+
             <section id="main">
                 <div class="container">
                     <?php

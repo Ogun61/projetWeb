@@ -12,6 +12,7 @@ if (isset($_POST['formconnexion'])) {
             $userinfo = $requser->fetch();
             $_SESSION['id'] = $userinfo['id'];
             $_SESSION['pseudo'] = $userinfo['pseudo'];
+            $_SESSION['nom'] = $userinfo['nom'];
             $_SESSION['email'] = $userinfo['email'];
             header('Location: index.php?page=accueil');
             
@@ -25,13 +26,13 @@ if (isset($_POST['formconnexion'])) {
 ?>
 
 <?php 
-    if (isset($_POST['formdeconnexion'])){
+if (isset($_POST['formdeconnexion'])){
 
-        header('Location: index.php?page=accueil');
-    }
-    
+    header('Location: index.php?page=accueil');
+}
 
- ?>
+
+?>
 
 
 
@@ -48,27 +49,39 @@ if (isset($_SESSION['id'])) {
             <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Produit</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Commander</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                    <li class="dropdown order-1">
-                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Logout <span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right mt-2">
-                            <li class="px-3 py-2">
-                                <form action="index.php?page=deconnexion" method="post">
-                                 <div class="form-group">
-                                    <button name="formdeconnexion" type="submit" class="btn btn-primary btn-block">Déconnexion</button>
-                                </div>
-                            </form>
 
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+                    <li class="nav-item dropdown">
+                        <a href="index.php?page=produit" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Freins</a>
+                          <a class="dropdown-item" href="#">Suspension</a>
+                          <a class="dropdown-item" href="#">Filtre</a>
+                      </div>
+                  </li>
+
+
+
+                  <li class="nav-item"><a href="#" class="nav-link">Commander</a></li>
+                  <li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
+              </ul>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="dropdown order-1">
+                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Logout <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-2">
+                        <li class="px-3 py-2">
+                            <form action="index.php?page=deconnexion" method="post">
+                               <div class="form-group">
+                                <small><?php echo "Bonjour ".$_SESSION['nom']; ?></small>
+                                <button name="formdeconnexion" type="submit" class="btn btn-primary btn-block">Déconnexion</button>
+                            </div>
+                        </form>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
+</div>
 </nav>
 
 <?php } else {
@@ -82,9 +95,16 @@ if (isset($_SESSION['id'])) {
             <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Produit</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="index.php?page=produit" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Frein</a>
+                            <a class="dropdown-item" href="#">Suspension</a>
+
+                        </div>
+                    </li>
                     <li class="nav-item"><a href="#" class="nav-link">Commander</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                     <li class="dropdown order-1">

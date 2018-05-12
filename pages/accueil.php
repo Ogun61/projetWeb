@@ -34,7 +34,7 @@ Le site Apsll est synonyme de haute qualité, les meilleurs prix et un service d
 </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
+              <a href="#" class="btn btn-primary">Commander</a>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ Le site Apsll est synonyme de haute qualité, les meilleurs prix et un service d
               <p class="card-text">Les suspensions sur une voiture sont les éléments permettant de relier les masses non suspendues (roues, système de freinage, etc…) aux masses suspendues (châssis, moteur, etc…). La suspension avant d'un véhicule se compose d'une rotule de suspension, d'un bras de suspension, d'amortisseurs et de ressort de suspension.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
+              <!--<a href="#" class="btn btn-primary">More Info</a>-->
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ Le site Apsll est synonyme de haute qualité, les meilleurs prix et un service d
               <p class="card-text">Plusieurs éléments sont à vérifier. Les filtres en font partie. Ils doivent être changés au risque de ne plus remplir leur fonction. Ils ont pour mission de nettoyer/filtrer les carburants, les poussières, nettoyer l’huile moteur…</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
+              <!--<a href="#" class="btn btn-primary">More Info</a>-->
             </div>
           </div>
         </div>
