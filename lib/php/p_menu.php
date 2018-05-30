@@ -55,7 +55,7 @@ if (isset($_SESSION['id'])) {
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Freins</a>
                           <a class="dropdown-item" href="#">Suspension</a>
-                          <a class="dropdown-item" href="#">Filtre</a>
+                          <a class="dropdown-item" href="index.php?page=filtre.php">Filtre</a>
                       </div>
                   </li>
 
@@ -71,7 +71,7 @@ if (isset($_SESSION['id'])) {
                         <li class="px-3 py-2">
                             <form action="index.php?page=deconnexion" method="post">
                                <div class="form-group">
-                                <small><?php echo "Bonjour ".$_SESSION['nom']; ?></small>
+                                <h4><?php echo "Bonjour ".ucfirst($_SESSION['nom']); ?></h4>
                                 <button name="formdeconnexion" type="submit" class="btn btn-primary btn-block">Déconnexion</button>
                             </div>
                         </form>
@@ -98,7 +98,7 @@ if (isset($_SESSION['id'])) {
                     <li class="nav-item dropdown">
                         <a href="index.php?page=produit" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Frein</a>
+                            <a class="dropdown-item" href="index.php?page=frein.php">Frein</a>
                             <a class="dropdown-item" href="#">Suspension</a>
 
                         </div>
