@@ -1,58 +1,123 @@
 //pour attendre que tous les objets soient chargés
 $(document).ready(function(){
 
-     //$(".navbar-toggler").collapse();
-     //$(".dropdown-toggle").dropdown();
+  $.validator.setDefaults({
+    errorClass: 'help-block',
+    highlight: function(element) {
+      $(element)
+      .closest('.champs-insc')
+      .addClass('has-error');
+  },
+  unhighlight: function(element) {
+      $(element)
+      .closest('.champs-insc')
+      .removeClass('has-error');
+  },
+  errorPlacement: function (error, element) {
+      if (element.prop('type') === 'checkbox') {
+        error.insertAfter(element.parent());
+    } else {
+        error.insertAfter(element);
+    }
+}
+});
 
+  $.validator.addMethod('strongPassword', function(value, element) {
+    return this.optional(element) 
+    || value.length >= 6
+    && /\d/.test(value)
+    && /[a-z]/i.test(value);
+}, 'Votre mot de passe doit contenir au moins 6 caractères et contenir au moins un chiffre\'.')
 
-
-          //pour pouvoir utiliser regex
-          $.validator.addMethod("regex", function (value, element, regexpr) {
-            return regexpr.test(value);
-        }, "Format non valide.");
-
-
-    //champs -> identifiants
-    $("#form_commande").validate({
-        rules: {
-            email_maitre: "required",
-            nom_maitre: "required",
-            prenom_maitre: "required",
-            telephone: {
-                required: true,
-                regex: /^(0)[0-9]{2,3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}$/
-            },
-            adresse_maitre: "required",
-            numero_maitre: "required",
-            codepostal: {
-                required: true,
-                min: 1000,
-                max: 9999
-            },
-            ville: "required",
-            submitHandler: function (form) {
-                form.submit();
-            }
+  $("#new_user").validate({
+    rules: {
+        username: {
+            required: true,
+            nowhitespace: true,
+            lettersonly: true
+        },
+        email: {
+            required: true,
+            email: true,
+            
+        },
+        password: {
+            required: true,
+            strongPassword: true
+        },
+        password_confirmation: {
+            required: true,
+            equalTo: '#password'
+        },
+        nom: {
+            required: true,
+            nowhitespace: true,
+            lettersonly: true
+        },
+        prenom: {
+            required: true,
+            nowhitespace: true,
+            lettersonly: true
+        },
+        adresse: {
+            required: true
+        },
+        ville: {
+            required: true,
+            
+        },
+        code_postal: {
+            required: true,
+            min: 1000,
+            max: 9999
+            
         }
-    });
+    },
+    messages: {
+        username: {
+            required: 'Ce champ est requis.',
+            nowhitespace: 'le nom d\'utilisateur ne peut pas contenir d\'espace',
+            
+        },nom: {
+            required: 'Ce champ est requis.',
+            lettersonly: 'Veuillez entrer un nom .',
+            nowhitespace: 'le nom ne peut pas contenir d\'espace',
+        },
+        prenom: {
+            required: 'Ce champ est requis.',
+            lettersonly: 'Veuillez entrer un prénom .',
+            nowhitespace: 'le pénom ne peut pas contenir d\'espace',
+        },
+        ville: {
+            required: 'Ce champ est requis.',
+            lettersonly: 'Veuillez entrer une ville .',
+        },
+        adresse: {
+            required: 'Ce champ est requis.',
+            adresse: 'Veuillez entrer une adresse .',
+            max: 'Veuillez entrer un code postal valide',
+        },
+        code_postal: {
+            required: 'Ce champ est requis.',
+            min: 'Veuillez entrer un code postal valide .',
+            max: 'Veuillez entrer un code postal valide .',
+        },
+        password: {
+            required: 'Veuillez entrer un mot de passe.',
 
-    //TRADUCTION DES MESSAGES DE VALIDATION EN FRANÇAIS
-    $.extend($.validator.messages, {
-        required: "Veuillez renseigner ce champ.",
-        email: "Veuillez renseigner un email valide.",
-        url: "Url non conforme.",
-        date: "Date non valide.",
-        number: "Veuillez n'entrer que des chiffres.",
-        digits: "Veuillez n'entrer que des chiffres.",
-        equalTo: "Les champs ne concordent pas.",
-        maxlength: $.validator.format("Entrez au maximum {0} caract&egrave;res."),
-        minlength: $.validator.format("Entrez au minimum {0} caract&egrave;res."),
-        rangelength: $.validator.format("Votre entrée doit compter entre {0} et {1} caract&egrave;res."),
-        range: $.validator.format("Entrez un nombre entre {0} et {1}."),
-        max: $.validator.format("Entrez un nombre inférieur ou égal à {0}."),
-        min: $.validator.format("Entrz un nombre de minimum {0}."),
-        regex: "Format non conforme"
-    });
+            
+        },
+        password_confirmation: {
+            required: 'Veuillez entrer un mot de passe.',
 
-    
+            
+        },
+        email: {
+            required: 'Veuillez entrer une adresse email.',
+            email: 'Veuillez entrer une adresse email <em>valide</em>.',
+            
+        }
+    }
+});
+
 });

@@ -50,7 +50,7 @@ if (isset($_SESSION['id'])) {
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
 					<li class="nav-item"><a href="index.php?page=produit" class="nav-link">Produit</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Commander</a></li>
+					<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>
 					<li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -61,6 +61,7 @@ if (isset($_SESSION['id'])) {
 								<form action="index.php?page=deconnexion" method="post">
 									<div class="form-group">
 										<h4><?php echo "Bonjour ".ucfirst($_SESSION['nom']); ?></h4>
+										<small><a href="index.php?page=panier">Panier</a></small>
 										<button name="formdeconnexion" type="submit" class="btn btn-primary btn-block">Déconnexion</button>
 									</div>
 								</form>
@@ -85,7 +86,7 @@ if (isset($_SESSION['id'])) {
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
 					<li class="nav-item"><a href="index.php?page=produit" class="nav-link">Produit</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Commander</a></li>
+					<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>
 					<li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav flex-row justify-content-between ml-auto">
