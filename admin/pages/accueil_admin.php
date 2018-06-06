@@ -29,14 +29,14 @@ $listeClient = $info->getAllClient();
 			for ($i = 0; $i < sizeof($listeClient); $i++) {
 				?>
 				<tr>
-					<td scope="row"><?php print $listeClient[$i]['id'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['nom'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['prenom'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['pseudo'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['email'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['adresse'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['code_postal'] ?></th>
-					<td scope="row"><?php print $listeClient[$i]['ville'] ?></th>	
+					<td scope="row"><?php print $listeClient[$i]['id'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['nom'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['prenom'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['pseudo'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['email'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['adresse'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['code_postal'] ?></td>
+					<td scope="row"><?php print $listeClient[$i]['ville'] ?></td>	
 
 					</tr>
 					<?php
@@ -46,5 +46,6 @@ $listeClient = $info->getAllClient();
 			</tbody>
 		</table>
 	</div>
+
 
 

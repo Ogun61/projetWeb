@@ -7,11 +7,13 @@ class CommandeDB extends Commande {
     }
     public function ajoutCommande(array $data) {
         try {
-            $query = "insert into commande (id_client,id_prod) values (:id_client,:id_prod)";
+            $query = "insert into commande (id_client,id_prod,adresse,cp) values (:id_client,:id_prod,:adresse,:cp)";
             //var_dump($query);
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':id_client', $data['id_client'], PDO::PARAM_STR);
             $resultset->bindValue(':id_prod', $data['id_prod'], PDO::PARAM_STR);
+            $resultset->bindValue(':adresse', $data['adresse'], PDO::PARAM_STR);
+            $resultset->bindValue(':cp', $data['cp'], PDO::PARAM_STR);
             $resultset->execute();
             //$retour = $resultset->fetchColumn(0);
             //return $retour;
@@ -58,4 +60,5 @@ class CommandeDB extends Commande {
             print $e->getMessage();
         }
     }
+
 }

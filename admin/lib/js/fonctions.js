@@ -1,6 +1,10 @@
 //pour attendre que tous les objets soient chargés
 $(document).ready(function(){
 
+    $('#exampleCheck1').click(function(){
+        $('#checkverif').toggle();  
+    });
+
     //recherche client dans la partie admin
     $("#mesChamps").on("keyup", function() {
         var value = $(this).val().toLowerCase();
@@ -9,7 +13,7 @@ $(document).ready(function(){
         });
     });
 
-    
+
     $.validator.setDefaults({
         errorClass: 'help-block',
         highlight: function(element) {
@@ -127,5 +131,37 @@ $(document).ready(function(){
             }
         }
     });
+
+
+
+
+    $("#validationpanier").validate({
+        rules: {
+            adresse: {
+                required: true,
+                
+            },
+            codepostal: {
+                required: true,
+                min: 1000,
+                max: 9999
+
+            },
+        },
+        messages: {
+            adresse: {
+                required: 'Ce champ est requis.',
+                adresse: 'Veuillez entrer une adresse .',
+                
+
+            },
+            codepostal: {
+                required: 'Ce champ est requis.',
+                min: 'Veuillez entrer un code postal valide .',
+                max: 'Veuillez entrer un code postal valide .',
+            },
+        }
+    });
+
 
 });

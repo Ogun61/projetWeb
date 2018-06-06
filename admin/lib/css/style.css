@@ -120,3 +120,39 @@ div#maps {
     
 
 }
+
+#dec{
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+
+}
+
+#dec:hover{
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    
+}
+
+.mod{
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.mod:hover{
+    background-color: red;
+    border-color: red;
+}
+
+.validpan{
+    margin-left: 450px;
+}
+
+#formcom{
+    margin-left: 58px;
+}
+
+
+
+#inputGroup-sizing-sm {
+    width: 100px;
+}
+

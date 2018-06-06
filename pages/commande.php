@@ -7,8 +7,8 @@ if (isset($_SESSION['id_prod'])) {
     $prd = $produit->getProduitId($_SESSION['id_prod']);
 }
 if (isset($_GET['acheter'])) {
-    $commande = new CommandeDB($cnx);
-    $commande->ajoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod']));
+    $commande = new PanierDB($cnx);
+    $commande->ajoutPanier(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod']));
     
     
     ?>
@@ -17,7 +17,7 @@ if (isset($_GET['acheter'])) {
         alert("Le produit a été ajouter au panier !");
 
     </script>
-    <meta http-equiv = "refresh": content = "2;url=index.php?page=produit">
+    //<meta http-equiv = "refresh": content = "1;url=index.php?page=produit">
     <?php
 
 }

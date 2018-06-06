@@ -80,5 +80,23 @@ class ProduitDB extends Produit {
             return null;
         }
     }
+
+    public function getProduitClient() {
+        try {
+            $query = "SELECT p.nom,c.id_com,c.id_client,c.id_prod,p.prix FROM COMMANDE c join produit p on(p.id_prod=c.id_prod)";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            while ($data = $resultset->fetch()) {
+                $_array[] = $data;
+            }
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+        if (!empty($_array)) {
+            return $_array;
+        } else {
+            return null;
+        }
+    }
 }
 

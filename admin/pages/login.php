@@ -10,7 +10,6 @@ if (isset($_POST['formconnexion'])) {
     else {
         $_SESSION['admin'] = 1;
         $erreur = "Authentifié!";
-        var_dump($_SESSION);
         print "message : " . $erreur;
         header('Location: ./index.php?page=accueil_admin');
     } 
