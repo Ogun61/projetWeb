@@ -34,7 +34,7 @@ Le site Apsll est synonyme de haute qualité, les meilleurs prix et un service d
 </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Commander</a>
+              
             </div>
           </div>
         </div>

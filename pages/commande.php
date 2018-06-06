@@ -14,7 +14,7 @@ if (isset($_GET['acheter'])) {
     ?>
     <script type="text/javascript">
 
-        alert("Le produit a été commander !");
+        alert("Le produit a été ajouter au panier !");
 
     </script>
     <meta http-equiv = "refresh": content = "2;url=index.php?page=produit">
@@ -49,7 +49,7 @@ if (isset($_SESSION['id_prod'])) {
             print utf8_decode($prd[0]['prix']);
             ?>€</td>
             <td>  
-                <input type="submit" button type="button" name="acheter" id="acheter" value="Commander" class="btn btn-secondary">&nbsp;  
+                <input type="submit" button type="button" name="acheter" id="acheter" value="Ajouter au panier" class="btn btn-secondary">&nbsp;  
 
                 <button type="button" value="Annuler" class="btn btn-secondary" onClick="javascript:document.location.href = 'index.php?page=produit'" /> Retour  </button>
 
@@ -66,7 +66,7 @@ if (isset($_SESSION['id_prod'])) {
 
 <?php
 }else{
-    echo "Aucune commande, ajouter d'abord un produit au panier dans la page produit";
+    echo "Aucune commande, ajouter d'abord un produit au panier à partir de la page produit";
 }
 ?>
 

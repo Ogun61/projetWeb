@@ -49,8 +49,14 @@ if (isset($_SESSION['id'])) {
 			<div class="collapse navbar-collapse" id="exCollapsingNavbar">
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
-					<li class="nav-item"><a href="index.php?page=produit" class="nav-link">Produit</a></li>
-					<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="index.php?page=produit" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="index.php?page=produitP">Pièce</a>
+							<a class="dropdown-item" href="index.php?page=produitE">Entretien</a>
+						</div>
+					</li>
+					<!--<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>-->
 					<li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -61,7 +67,7 @@ if (isset($_SESSION['id'])) {
 								<form action="index.php?page=deconnexion" method="post">
 									<div class="form-group">
 										<h4><?php echo "Bonjour ".ucfirst($_SESSION['nom']); ?></h4>
-										<small><a href="index.php?page=panier">Panier</a></small>
+										<small><a id="panier" href="index.php?page=panier"><img src="./images/panier22.png"></a></small>
 										<button name="formdeconnexion" type="submit" class="btn btn-primary btn-block">Déconnexion</button>
 									</div>
 								</form>
@@ -85,8 +91,13 @@ if (isset($_SESSION['id'])) {
 			<div class="collapse navbar-collapse" id="exCollapsingNavbar">
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
-					<li class="nav-item"><a href="index.php?page=produit" class="nav-link">Produit</a></li>
-					<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="index.php?page=produit" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="index.php?page=produitP">Pièce</a>
+							<a class="dropdown-item" href="index.php?page=produitE">Entretien</a>
+						</div>
+					<!--<li class="nav-item"><a href="index.php?page=commande" class="nav-link">Commander</a></li>-->
 					<li class="nav-item"><a href="index.php?page=contact" class="nav-link">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -117,6 +128,7 @@ if (isset($_SESSION['id'])) {
 							</li>
 						</ul>
 					</li>
+
 				</ul>
 			</div>
 		</div>

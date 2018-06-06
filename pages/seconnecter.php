@@ -28,10 +28,10 @@ if (isset($_POST['formconnexion'])) {
         <form action="index.php" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
             <div class="form-group user_login">
-                <input class="form-control" placeholder="Email" type="text" name="mailconnect" id="user_login" />
+                <input class="form-control1" placeholder="Email" type="text" name="mailconnect" id="user_login" />
             </div>
             <div class="form-group user_password">
-                <input class="form-control" placeholder="Mot de passe" type="password" name="mdpconnect" id="user_password" />
+                <input class="form-control1" placeholder="Mot de passe" type="password" name="mdpconnect" id="user_password" />
             </div>
             <div class="form-group">
                 <button name="formconnexion" type="submit" class="btn btn-primary btn-block">Connexion</button>

@@ -59,7 +59,6 @@ body{
 
 .form-control {
     color: #393f49;
-    background-color: #fafafa;
 }
 
 .dark .form-control1 {
@@ -104,4 +103,20 @@ section#main {
 
 div#maps {
     margin-top: 250px;
+}
+
+.has-error{
+    color: red;
+}
+
+#panier{
+    color: black;
+    margin-left: 40px;
+    text-decoration: none;
+
+}
+#panier:hover{
+    color: grey;
+    
+
 }

@@ -1,10 +1,10 @@
 <?php if(isset($_POST['submit'])){
-    $pseudo =($_POST['pseudo']);
+    $nom =($_POST['nom']);
     $email =($_POST['email']);
     $message =($_POST['message']);
-	if( $_POST['message']==" " ||  $_POST['pseudo']==" " || $_POST['email']==" "){
+	if( $_POST['message']=="" ||  $_POST['nom']=="" || $_POST['email']==""){
 		$erreur=1;
-		print "test";
+		
 	}
 }
 
@@ -35,8 +35,8 @@
                     <div class="icon-contacts pb-3">
 
                         <p class="mbr-text align-left mbr-fonts-style display-7">
-                            Phone: +1 (0) 000 0000 001 <br>
-                            Email: youremail@mail.com
+                            Téléphone: +32 64 33 44 54 <br>
+                            Email: apsll@apsll.be
                         </p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <form class="block mbr-form form-active" method="post" >
                     <div class="row">
                         <div class="col-md-6 multi-horizontal" data-for="name">
-                            <input type="text" placeholder="Pseudo" name="pseudo" class="form-control" id="inputname" <?php if(isset($_POST['submit'])){if( $_POST['pseudo']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>>
+                            <input type="text" placeholder="Nom" name="nom" class="form-control" id="inputname" <?php if(isset($_POST['submit'])){if( $_POST['nom']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>>
                         </div>
                         <div class="col-md-6 multi-horizontal" data-for="email">
                             <input type="text" placeholder="Email" name="email" class="form-control" id="inputemail" <?php if(isset($_POST['submit'])){if( $_POST['email']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>>
@@ -64,19 +64,13 @@
 </section>
 <?php 
 if(isset($_POST['submit'])){
-
-   $reqpseudo = $cnx->prepare("SELECT * from client where pseudo= ?");
-   $reqpseudo->execute(array($pseudo));
-   $clientexist = $reqpseudo->rowCount();
-   if ($clientexist!=0) {
-
     if(!isset($erreur)){
-        $insertmsg= $cnx->prepare("INSERT INTO contact(pseudo,email,message) values(?,?,?)");
-        $insertmsg->execute(array($pseudo,$email,$message));  
+        $insertmsg= $cnx->prepare("INSERT INTO contact(nom,email,message) values(?,?,?)");
+        $insertmsg->execute(array($nom,$email,$message));  
       
   }
-}
-else{ echo "<span class=\"form_rouge\">client inconue</span>";}
+
+else{echo '<font color="red">Tous les champs doivent être compléter</font>';}
 }
 ?>
 

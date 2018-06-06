@@ -44,4 +44,41 @@ class ProduitDB extends Produit {
         }
         return $_array;
     }
+
+    public function getProduitP() {
+        try {
+            $query = "select * from produit where categorie = 'piece'";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            while ($data = $resultset->fetch()) {
+                $_array[] = $data;
+            }
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+        if (!empty($_array)) {
+            return $_array;
+        } else {
+            return null;
+        }
+    }
+
+        public function getProduitE() {
+        try {
+            $query = "select * from produit where categorie = 'ent'";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            while ($data = $resultset->fetch()) {
+                $_array[] = $data;
+            }
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+        if (!empty($_array)) {
+            return $_array;
+        } else {
+            return null;
+        }
+    }
 }
+
