@@ -22,29 +22,37 @@ if (!empty($panier_client)) {
     }
     if (isset($_GET['validationpanier'])) {
         if (!isset($_GET['check11'])) {
-           $commande = new CommandeDB($cnx);
-           $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod'], "adresse" => $_GET['adresse'], "cp" => $_GET['codepostal']));
+            $panier_client = $panier->getPanierClient($_SESSION['id']);
+            $commande = new CommandeDB($cnx);
+            for ($i=0; $i <sizeof($panier_client); $i++) { 
+               $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $panier_client[$i]['id_prod'], "adresse" => $_GET['adresse'], "cp" => $_GET['codepostal']));
+           }
            $panier_client = $panier->viderPanier($_SESSION['id']);
            ?>
            <script type="text/javascript">
 
-           alert("Commande effectué !");
-           
+               alert("Commande effectué !");
+
            </script>
 
            <?php
            print "<meta http-equiv=\"refresh\": Content=\"0;URL=./index.php?page=accueil\">";
        }
        else{
-        $panier_client = $panier->getPClient($_SESSION['id']);
+        $panier_client = $panier->getPanierClient($_SESSION['id']);
         $commande = new CommandeDB($cnx);
-        $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod'], "adresse" =>null , "cp" =>null ));
+        for ($i=0; $i <sizeof($panier_client) ; $i++) { 
+            $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $panier_client[$i]['id_prod'] , "adresse" =>null , "cp" =>null ));
+            //var_dump($panier_client);
+        }
         $panier_client = $panier->viderPanier($_SESSION['id']);
+
+        
         ?>
         <script type="text/javascript">
 
-        alert("Commande effectué!");
-        
+            alert("Commande effectué!");
+
         </script>
         <?php
         print "<meta http-equiv=\"refresh\": Content=\"0;URL=./index.php?page=accueil\">";

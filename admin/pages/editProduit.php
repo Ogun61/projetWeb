@@ -24,9 +24,9 @@ $listeClient = $info->getProduit();
 			for ($i = 0; $i < sizeof($listeClient); $i++) {
 				?>
 				<tr>
-					<td scope="row" fulltable-field-name="id_prod"><?php print $listeClient[$i]['id_prod'] ?></td>
-					<td scope="row" fulltable-field-name="nom"><?php print $listeClient[$i]['nom'] ?></td>
-					<td scope="row" fulltable-field-name="prix"><?php print $listeClient[$i]['prix'].' €' ?></td>
+					<td scope="row" ><?php print $listeClient[$i]['id_prod'] ?></td>
+					<td scope="row" ><?php print $listeClient[$i]['nom'] ?></td>
+					<td scope="row" ><?php print $listeClient[$i]['prix'].' €' ?></td>
 				</tr>
 				<?php
 			}
