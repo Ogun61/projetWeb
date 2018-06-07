@@ -84,10 +84,11 @@ class PanierDB extends Panier {
         }
     }
 
-    public function viderPanier() {
+    public function viderPanier($id) {
              try {
-            $query = "TRUNCATE TABLE panier";
+            $query = "Delete from panier where id_client=:id_client";
             $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':id_client', $id);
             $resultset->execute();
             $data = $resultset->fetchAll();
             //$retour = $resultset->fetchColumn(0);

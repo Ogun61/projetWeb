@@ -48,5 +48,4 @@ for ($i = 0; $i < $nbrProduit; $i++) {
 <?php
 }
 ?>
-<a href='./pages/imprimer.php' target='_blank'>Imprimer la liste des produits</a>
 </div> 

@@ -41,16 +41,16 @@
                     </div>
                 </div>
                 
-                <form class="block mbr-form form-active" method="post" >
+                <form class="block mbr-form form-active" id="formcontact" method="post" >
                     <div class="row">
                         <div class="col-md-6 multi-horizontal" data-for="name">
-                            <input type="text" placeholder="Nom" name="nom" class="form-control" id="inputname" <?php if(isset($_POST['submit'])){if( $_POST['nom']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>>
+                            <input type="text" placeholder="Nom" name="nom" class="form-control" id="inputname" >
                         </div>
                         <div class="col-md-6 multi-horizontal" data-for="email">
-                            <input type="text" placeholder="Email" name="email" class="form-control" id="inputemail" <?php if(isset($_POST['submit'])){if( $_POST['email']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>>
+                            <input type="text" placeholder="Email" name="email" class="form-control" id="inputemail" >
                         </div>
                         <div class="col-md-12" data-for="message">
-                            <textarea id="inputmessage" placeholder="Votre message" name="message" class="form-control" <?php if(isset($_POST['submit'])){if( $_POST['message']==" "){echo "<span class=\"form_rouge\">Information manquante</span>";}} ?>></textarea>
+                            <textarea id="inputmessage" placeholder="Votre message" name="message" class="form-control"></textarea>
                         </div>
                         <div class="input-group-btn col-md-12" style="margin-top: 10px;">
                             <button type="submit" name="submit" class="btn btn-primary btn-form display-4">Envoyer</button>

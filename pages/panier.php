@@ -24,7 +24,7 @@ if (!empty($panier_client)) {
         if (!isset($_GET['check11'])) {
            $commande = new CommandeDB($cnx);
            $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod'], "adresse" => $_GET['adresse'], "cp" => $_GET['codepostal']));
-           $panier_client = $panier->viderPanier();
+           $panier_client = $panier->viderPanier($_SESSION['id']);
            ?>
            <script type="text/javascript">
 
@@ -39,7 +39,7 @@ if (!empty($panier_client)) {
         $panier_client = $panier->getPClient($_SESSION['id']);
         $commande = new CommandeDB($cnx);
         $commande_client = $commande->AjoutCommande(array("id_client" => $_SESSION['id'], "id_prod" => $_SESSION['id_prod'], "adresse" =>null , "cp" =>null ));
-        $panier_client = $panier->viderPanier();
+        $panier_client = $panier->viderPanier($_SESSION['id']);
         ?>
         <script type="text/javascript">
 

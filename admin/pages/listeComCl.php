@@ -11,6 +11,7 @@ $listeClient = $info->getProduitClient();
 	<p>Tapez quelque chose dans le champ de saisie pour rechercher les informations disponible dans la table</p>  
 	<input class="form-control" id="mesChamps" type="text" placeholder="Search..">
 	<br>
+	<div class="table-responsive">
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
@@ -41,6 +42,7 @@ $listeClient = $info->getProduitClient();
 				?>
 			</tbody>
 		</table>
+	</div>
 	</div>
 
 

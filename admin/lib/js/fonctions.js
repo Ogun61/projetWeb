@@ -1,6 +1,7 @@
 //pour attendre que tous les objets soient chargés
 $(document).ready(function(){
 
+    //adresse livraison panier
     $('#exampleCheck1').click(function(){
         $('#checkverif').toggle();  
     });
@@ -162,6 +163,99 @@ $(document).ready(function(){
             },
         }
     });
+
+
+    $("#formcontact").validate({
+        rules: {
+            nom: {
+                required: true,
+                nowhitespace: true,
+                lettersonly: true     
+            },
+            email: {
+                required: true,
+                email: true
+
+            },
+            message: {
+                required: true,
+                
+
+            },
+        },
+        messages: {
+            nom: {
+                required: 'Ce champ est requis.',
+                lettersonly: 'Veuillez entrer un nom .',
+                nowhitespace: 'Le nom ne peut pas contenir d\'espace',
+            },
+            email: {
+                required: 'Veuillez entrer une adresse email.',
+                email: 'Veuillez entrer une adresse email <em>valide</em>.',
+
+            },
+            message: {
+                required: 'Ce champ est requis.',
+
+            },
+        }
+    });
+
+
+
+
+
+    $("td[id]").click(function () {
+        var valeur1 = $.trim($(this).text());
+        if (/Edge\/\d./i.test(navigator.userAgent)) {
+            $(this).addClass("borderInput");
+        }
+
+        var ident = $(this).attr("id");
+        var name = $(this).attr("name");
+
+        $(this).blur(function () {
+            $(this).removeClass("borderInput");
+            var valeur2 = $(this).text();
+            valeur2 = $.trim(valeur2);
+
+            if (valeur1 != valeur2)
+            {
+                var parametre = 'champ=' + name + '&id=' + ident + '&nouveau=' + valeur2;
+                var retour = $.ajax({
+                    type: 'GET',
+                    data: parametre,
+                    dataType: "text",
+                    url: "../lib/php/ajax/UpdateProduit.php",
+                    success: function (data) {
+                        console.log("success");
+                    }
+                });
+                retour.fail(function (jqXHR, textStatus, errorThrown) {
+                    //alert("Echec retour: " + textStatus + "\nerrorThrown: " + errorThrown);
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                });
+            };
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

@@ -52,6 +52,7 @@ if (isset($_SESSION['id'])) {
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="index.php?page=produit" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="index.php?page=produit">Tous les produits</a>
 							<a class="dropdown-item" href="index.php?page=produitP">Pièce</a>
 							<a class="dropdown-item" href="index.php?page=produitE">Entretien</a>
 						</div>
@@ -94,6 +95,7 @@ if (isset($_SESSION['id'])) {
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="index.php?page=produit" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produit</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="index.php?page=produit">Tous les produits</a>
 							<a class="dropdown-item" href="index.php?page=produitP">Pièce</a>
 							<a class="dropdown-item" href="index.php?page=produitE">Entretien</a>
 						</div>

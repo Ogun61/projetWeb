@@ -11,6 +11,7 @@ $listeClient = $info->getAllClient();
 	<p>Tapez quelque chose dans le champ de saisie pour rechercher dans la table les prénoms, les noms de famille, les emails, les pseudos, les adresses, ou les villes :</p>  
 	<input class="form-control" id="mesChamps" type="text" placeholder="Search..">
 	<br>
+	<div class="table-responsive">
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
@@ -45,6 +46,7 @@ $listeClient = $info->getAllClient();
 				?>
 			</tbody>
 		</table>
+	</div>
 	</div>
 
 
